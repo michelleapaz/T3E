@@ -24,9 +24,16 @@ Clone the T3E repository:
     git clone https://github.com/michelleapaz/T3E
     
 ## Usage
-# Explain all the steps of main.sh, input, folders (bam, references, repeats, results, scripts), output files
-T3E uses the information contained in two files (**parameters.txt** and **control_sample.txt**) in **./references** folder
-The parameter.txt file contains the following parameters:
+T3E contains five folders:
+1. **./bam/** - contains BAM files
+2. **/references/** - contains **control_sample.txt**, **parameters.txt** and information about chromosome sizes [hg38.genome (_Homo sapiens_) and mm10.genome (_Mus musculus_)]
+3. **/repeats/** - contains transposable elements annotation [rmsk_hg38.bed (_Homo sapiens_) and rmsk_mm10.bed (_Mus musculus_)]
+
+
+
+
+The **main.sh** code uses the information contained in two files (**parameters.txt** and **control_sample.txt**) in **./references** folder
+The **parameter.txt** file contains the following parameters:
 
 | Arguments  | Explanation |
 | ------------- | ------------- |
@@ -36,11 +43,14 @@ The parameter.txt file contains the following parameters:
 | enrichment | log2FC threshold to report enrichment [Example: 1.0] |
 | filter | filter out regions of extremely high signals (0 for NO and 1 for YES) |
 
-The control_sample.txt file contains the following information:
+The **control_sample.txt** file contains the ChIP-seq input control and sample names (if more than one ChIP-seq sample, separate them using commas) separated by a tab:
 
-| Control name  | Sample names (if more than one, separate with commas) |
+E.g. CONTROL_1<\t>SAMPLE_1,SAMPLE_2,...SAMPLE_N
 
-E.g. CONTROL_1 SAMPLE_1,SAMPLE_2,...SAMPLE_N
+In case 
+
+
+# Explain all the steps of main.sh, input, folders (bam, , repeats, results, scripts), output files
 
     nohup bash main.sh > log_file.txt 2>&1 &
     
