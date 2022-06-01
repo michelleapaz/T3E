@@ -69,7 +69,7 @@ Calculate input-based background probability distribution:
 | --species | hg38 (_Homo sapiens_) or mm10 (_Mus musculus_) [Example --species hg38] |
 | --outputfolder | output folder path [Example: /probabilities] |
 
-Run T3E:
+T3E:
 
     t3e.py [-h] [--version] [--repeat <repeat_file>] [--sample <sample_file>] 
            [--readlen <readlen>] [--control <control_file>]
@@ -90,4 +90,22 @@ Run T3E:
 | --iter | number of interations [Example: 100] |
 | --species | hg38 (_Homo sapiens_) or mm10 (_Mus musculus_) [Example --species hg38] |
 | --outputfolder | output folder path [Example: /probabilities] |
+| --outputprefix | prefix name of your analysis [Example: sample001] |
+
+Calculate TE families/subfamilies enrichments:
+
+    enrichment.py [-h] [--version] [--background <background>]
+                  [--signal <signal>] [--iter <iter>] [--alpha <alpha>]
+                  [--enrichment <enrichment>] [--outputfolder <outputfolder>]
+                  [--outputprefix <outputprefix>]
+                  
+| Arguments  | Explanation |
+| ------------- | ------------- |
+| -h, --help | shows help message and exits |
+| --background | ??? |
+| --signal | ??? |
+| --iter | number of interations [Example: 100] |
+| --alpha | ??? |
+| --enrichment | ??? |
+| --outputfolder | output folder path [Example: /results] |
 | --outputprefix | prefix name of your analysis [Example: sample001] |
