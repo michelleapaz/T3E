@@ -24,13 +24,12 @@ Clone the T3E repository:
     git clone https://github.com/michelleapaz/T3E
     
 ## Usage
-T3E contains five folders:
+T3E contains the **main.sh** code and five folders:
 1. **./bam/** - contains BAM files
-2. **/references/** - contains **control_sample.txt**, **parameters.txt** and information about chromosome sizes [hg38.genome (_Homo sapiens_) and mm10.genome (_Mus musculus_)]
-3. **/repeats/** - contains transposable elements annotation [rmsk_hg38.bed (_Homo sapiens_) and rmsk_mm10.bed (_Mus musculus_)]
-
-
-
+2. **./references/** - contains **control_sample.txt**, **parameters.txt** and information about chromosome sizes [hg38.genome (_Homo sapiens_) and mm10.genome (_Mus musculus_)]
+3. **./repeats/** - contains transposable elements annotation [rmsk_hg38.bed (_Homo sapiens_) and rmsk_mm10.bed (_Mus musculus_)]
+4. **./repeats/** - contains the output files
+5. **./scripts/** - contains all Python, Perl and R scripts
 
 The **main.sh** code uses the information contained in two files (**parameters.txt** and **control_sample.txt**) in **./references** folder
 The **parameter.txt** file contains the following parameters:
@@ -47,15 +46,14 @@ The **control_sample.txt** file contains the ChIP-seq input control and sample n
 
 E.g. CONTROL_1<\t>SAMPLE_1,SAMPLE_2,...SAMPLE_N
 
-In case 
+Directly, **main.sh** code process your datasets and runs T3E
 
-
-# Explain all the steps of main.sh, input, folders (bam, , repeats, results, scripts), output files
+### Run **main.sh** code:
 
     nohup bash main.sh > log_file.txt 2>&1 &
-    
 
-# Run each part individually
+### Or run each script separately:
+
 Calculate input-based background probability distribution:
 
     probabilities.py [-h] [--version] [--control <control_file>]
