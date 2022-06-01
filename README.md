@@ -32,12 +32,12 @@ Calculate input-basd background probability distribution:
 
 | Arguments  | Explanation |
 | ------------- | ------------- |
-| -h, --help | Shows help message and exits |
-| --version | Shows version message and exits |
+| -h, --help | shows help message and exits |
+| --version | shows version message and exits |
 | --control | ChIP-seq input control experiment [BED format] |
 | --readlen | ChIP-seq input control experiment read length in base pairs [Example --readlen 36] |
 | --species | hg38 (Homo sapiens) or mm10 (Mus musculus) [Example --species hg38] |
-| --outputfolder | Output folder path [Example: /probabilities] |
+| --outputfolder | output folder path [Example: /probabilities] |
 
 Run T3E:
 
@@ -47,5 +47,15 @@ Run T3E:
               
 | Arguments  | Explanation |
 | ------------- | ------------- |
-| -h, --help | Shows help message and exits |
-| --version | Shows version message and exits |
+| -h, --help | shows help message and exits |
+| --version | shows version message and exits |
+| --repeat | transposable elements annotation [BED format] |
+| --sample | transposable elements annotation [BED format] |
+| --readlen | transposable elements annotation [BED format] |
+| --control | transposable elements annotation [BED format] |
+| --controlcounts | transposable elements annotation [BED format] |
+| --probability | transposable elements annotation [BED format] |
+| --iter | transposable elements annotation [BED format] |
+| --species | hg38 (Homo sapiens) or mm10 (Mus musculus) [Example --species hg38] |
+| --outputfolder | output folder path [Example: /probabilities] |
+| --outputprefix | transposable elements annotation [BED format] |
