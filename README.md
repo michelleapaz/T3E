@@ -34,7 +34,7 @@ Calculate input-basd background probability distribution
 | ------------- | ------------- |
 | -h, --help | Shows help message and exits |
 | --version | Shows version message and exits |
-| --control | Shows version message and exits |
-| --readlen | Shows version message and exits |
-| --species | Shows version message and exits |
-| --outputfolder | Shows version message and exits |
+| --control | ChIP-seq input control experiment [BED format] |
+| --readlen | ChIP-seq input control experiment read length in base pairs [Example --readlen 36] |
+| --species | hg38 (Homo sapiens) or mm10 (Mus musculus) [Example --species hg38] |
+| --outputfolder | Output folder path [Example: /probabilities] |
