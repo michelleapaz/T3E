@@ -19,12 +19,13 @@ T3E was developed for UNIX environments, written and tested with the following v
   * samtools 1.10
 
 ## Instalation
-
+# Explain how to install using git clone
 ## Usage
+# Explain all the steps of main.sh, input, folders (bam, references, repeats, results, scripts), output files
     nohup bash main.sh > log_file.txt 2>&1 &
 Create **parameters** file and **control_sample** files
-
-Calculate input-basd background probability distribution:
+# Run each part individually
+Calculate input-based background probability distribution:
 
     probabilities.py [-h] [--version] [--control <control_file>]
                      [--readlen <readlen>] [--species <species>]
@@ -49,7 +50,7 @@ Run T3E:
 | ------------- | ------------- |
 | -h, --help | shows help message and exits |
 | --version | shows version message and exits |
-| --repeat | transposable elements annotation [BED format] |
+| --repeat | transposable elements annotation [rmsk_hg38.bed (Homo sapiens) or rmsk_mm10.bed (Mus musculus)] |
 | --sample | ChIP-seq sample experiment [.dict format] |
 | --readlen | ChIP-seq input control experiment read length in base pairs [Example --readlen 36] |
 | --control | ChIP-seq input control experiment [BED format] |
