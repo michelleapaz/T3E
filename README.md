@@ -102,10 +102,11 @@ Calculate TE families/subfamilies enrichments:
 | Arguments  | Explanation |
 | ------------- | ------------- |
 | -h, --help | shows help message and exits |
-| --background | ??? |
-| --signal | ??? |
+| --version | shows version message and exits |
+| --background | background file created by T3E [Example: sample001_background.txt] |
+| --signal | ChIP-seq sample experiment counts [.txt format] |
 | --iter | number of interations [Example: 100] |
-| --alpha | ??? |
-| --enrichment | ??? |
+| --alpha | level of significance to report enrichment [Example: 0.05] |
+| --enrichment | log2FC threshold to report enrichment [Example: 1.0] |
 | --outputfolder | output folder path [Example: /results] |
 | --outputprefix | prefix name of your analysis [Example: sample001] |
