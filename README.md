@@ -24,7 +24,7 @@ T3E was developed for UNIX environments, written and tested with the following v
     nohup bash main.sh > log_file.txt 2>&1 &
 Create **parameters** file and **control_sample** files
 
-Calculate input-basd background probability distribution
+Calculate input-basd background probability distribution:
 
     probabilities.py [-h] [--version] [--control <control_file>]
                      [--readlen <readlen>] [--species <species>]
@@ -38,3 +38,14 @@ Calculate input-basd background probability distribution
 | --readlen | ChIP-seq input control experiment read length in base pairs [Example --readlen 36] |
 | --species | hg38 (Homo sapiens) or mm10 (Mus musculus) [Example --species hg38] |
 | --outputfolder | Output folder path [Example: /probabilities] |
+
+Run T3E:
+
+    t3e.py [-h] [--version] [--repeat <repeat_file>] [--sample <sample_file>] [--readlen <readlen>] [--control <control_file>]
+           [--controlcounts <control_counts>] [--probability <probability_folder>] [--iter <iter>] [--species <species>]
+           [--outputfolder <outputfolder>] [--outputprefix <outputprefix>]
+              
+| Arguments  | Explanation |
+| ------------- | ------------- |
+| -h, --help | Shows help message and exits |
+| --version | Shows version message and exits |
