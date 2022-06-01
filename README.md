@@ -50,12 +50,12 @@ Run T3E:
 | -h, --help | shows help message and exits |
 | --version | shows version message and exits |
 | --repeat | transposable elements annotation [BED format] |
-| --sample | transposable elements annotation [BED format] |
-| --readlen | transposable elements annotation [BED format] |
-| --control | transposable elements annotation [BED format] |
-| --controlcounts | transposable elements annotation [BED format] |
-| --probability | transposable elements annotation [BED format] |
-| --iter | transposable elements annotation [BED format] |
+| --sample | ChIP-seq sample experiment [.dict format] |
+| --readlen | ChIP-seq input control experiment read length in base pairs [Example --readlen 36] |
+| --control | ChIP-seq input control experiment [BED format] |
+| --controlcounts | ChIP-seq input control experiment counts [.txt format] |
+| --probability | probability folder path [Example: /control/probability/] |
+| --iter | number of interations [Example: 100] |
 | --species | hg38 (Homo sapiens) or mm10 (Mus musculus) [Example --species hg38] |
 | --outputfolder | output folder path [Example: /probabilities] |
-| --outputprefix | transposable elements annotation [BED format] |
+| --outputprefix | prefix name of your analysis [Example: sample001] |
