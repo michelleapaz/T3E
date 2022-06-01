@@ -25,10 +25,26 @@ Clone the T3E repository:
     
 ## Usage
 # Explain all the steps of main.sh, input, folders (bam, references, repeats, results, scripts), output files
+T3E uses the information contained in two files (**parameters.txt** and **control_sample.txt**) in **./references** folder
+The parameter.txt file contains the following parameters:
+
+| Arguments  | Explanation |
+| ------------- | ------------- |
+| species | hg38 (_Homo sapiens_) or mm10 (_Mus musculus_) |
+| iterations | number of interations [Example: 100] |
+| alpha | level of significance to report enrichment [Example: 0.05] |
+| enrichment | log2FC threshold to report enrichment [Example: 1.0] |
+| filter | filter out regions of extremely high signals (0 for NO and 1 for YES) |
+
+The control_sample.txt file contains the following information:
+
+| Control name  | Sample names (if more than one, separate with commas) |
+
+E.g. CONTROL_1 SAMPLE_1,SAMPLE_2,...SAMPLE_N
 
     nohup bash main.sh > log_file.txt 2>&1 &
     
-Create **parameters** file and **control_sample** files
+
 # Run each part individually
 Calculate input-based background probability distribution:
 
