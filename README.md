@@ -19,10 +19,15 @@ T3E was developed for UNIX environments, written and tested with the following v
   * samtools 1.10
 
 ## Instalation
-# Explain how to install using git clone
+Clone the T3E repository:
+
+    git clone https://github.com/michelleapaz/T3E
+    
 ## Usage
 # Explain all the steps of main.sh, input, folders (bam, references, repeats, results, scripts), output files
+
     nohup bash main.sh > log_file.txt 2>&1 &
+    
 Create **parameters** file and **control_sample** files
 # Run each part individually
 Calculate input-based background probability distribution:
@@ -42,10 +47,12 @@ Calculate input-based background probability distribution:
 
 Run T3E:
 
-    t3e.py [-h] [--version] [--repeat <repeat_file>] [--sample <sample_file>] [--readlen <readlen>] [--control <control_file>]
-           [--controlcounts <control_counts>] [--probability <probability_folder>] [--iter <iter>] [--species <species>]
+    t3e.py [-h] [--version] [--repeat <repeat_file>] [--sample <sample_file>] 
+           [--readlen <readlen>] [--control <control_file>]
+           [--controlcounts <control_counts>] [--probability <probability_folder>] 
+           [--iter <iter>] [--species <species>]
            [--outputfolder <outputfolder>] [--outputprefix <outputprefix>]
-              
+
 | Arguments  | Explanation |
 | ------------- | ------------- |
 | -h, --help | shows help message and exits |
