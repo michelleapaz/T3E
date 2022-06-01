@@ -24,19 +24,17 @@ T3E was developed for UNIX environments, written and tested with the following v
     nohup bash main.sh > log_file.txt 2>&1 &
 Create **parameters** file and **control_sample** files
 
+Calculate input-basd background probability distribution
 
-
-Probabilities
-    nohup bash main.sh > log_file.txt 2>&1 &
-python3 -u probabilities.py --control $CONTROL_BED --readlen $READ_LEN --species $SPECIES --outputfolder $FOLDER_PROBABILITY_CONTROL;
-
-    
     probabilities.py [-h] [--version] [--control <control_file>]
                      [--readlen <readlen>] [--species <species>]
                      [--outputfolder <outputfolder>]
 
-
-| First Header  | Second Header |
+| Arguments  | Explanation |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| -h, --help | Shows help message and exits |
+| --version | Shows version message and exits |
+| --control | Shows version message and exits |
+| --readlen | Shows version message and exits |
+| --species | Shows version message and exits |
+| --outputfolder | Shows version message and exits |
