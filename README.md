@@ -113,4 +113,4 @@ Calculate TE families/subfamilies enrichments:
 
 ![T3E files](https://github.com/michelleapaz/T3E/blob/main/github_figure.pdf)
 
-![My Image](github_figure.pdf)
+![My Image](github_figure.jpg)
