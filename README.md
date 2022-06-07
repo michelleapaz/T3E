@@ -25,7 +25,10 @@ Clone the T3E repository:
 ## Usage
 T3E contains the **main.sh** code and five folders:
 1. **./bam/** - contains BAM files
-2. **./references/** - contains **control_sample.txt**, **parameters.txt** and information about chromosome sizes [hg38.genome (_Homo sapiens_) and mm10.genome (_Mus musculus_)]
+2. **./references/** - contains 
+ * **control_sample.txt**
+ * **parameters.txt** 
+ * information about chromosome sizes [hg38.genome (_Homo sapiens_) and mm10.genome (_Mus musculus_)]
 3. **./repeats/** - contains transposable elements annotation [rmsk_hg38.bed (_Homo sapiens_) and rmsk_mm10.bed (_Mus musculus_)]
 4. **./results/** - contains the output files
 5. **./scripts/** - contains all Python, Perl and R scripts
