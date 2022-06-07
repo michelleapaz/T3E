@@ -34,6 +34,7 @@ T3E contains the **main.sh** code and five folders:
 5. **./scripts/** - contains all Python, Perl and R scripts
 
 The **main.sh** code uses the information contained in two files (**parameters.txt** and **control_sample.txt**) in **./references** folder
+<br />
 The **parameter.txt** file contains the following parameters:
 
 | Arguments  | Explanation |
