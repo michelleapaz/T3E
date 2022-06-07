@@ -111,4 +111,4 @@ Calculate TE families/subfamilies enrichments:
 | --outputfolder | output folder path [Example: /results] |
 | --outputprefix | prefix name of your analysis [Example: sample001] |
 
-![T3E files](./github_figure.pdf?raw=true "T3E files")
+![T3E files]([.](https://github.com/github/michelleapaz/T3E/main/github_figure.pdf?raw=true "T3E files")
