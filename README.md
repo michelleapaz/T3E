@@ -47,7 +47,7 @@ The **parameter.txt** file contains the following parameters:
 
 The **control_sample.txt** file contains the ChIP-seq input control and sample names (if more than one ChIP-seq sample, separate them using commas) separated by a tab:
 
-E.g. CONTROL_1<\t>SAMPLE_1,SAMPLE_2,...SAMPLE_N
+```control sample_1,sample_2,...sample_n```
 
 Directly, **main.sh** code process your datasets and runs T3E
 
