@@ -57,7 +57,7 @@ Directly, **main.sh** code processes your datasets and runs T3E
 
 ### Or run each script separately:
 
-Calculate input-based background probability distribution:
+#### Calculate input-based background probability distribution:
 
     probabilities.py [-h] [--version] [--control <control_file>]
                      [--readlen <readlen>] [--species <species>]
@@ -72,7 +72,7 @@ Calculate input-based background probability distribution:
 | --species | hg38 (_Homo sapiens_) or mm10 (_Mus musculus_) [Example --species hg38] |
 | --outputfolder | output folder path [Example: /probabilities] |
 
-T3E:
+#### T3E:
 
     t3e.py [-h] [--version] [--repeat <repeat_file>] [--sample <sample_file>] 
            [--readlen <readlen>] [--control <control_file>]
@@ -95,7 +95,7 @@ T3E:
 | --outputfolder | output folder path [Example: /probabilities] |
 | --outputprefix | prefix name of your analysis [Example: sample001] |
 
-Calculate TE families/subfamilies enrichments:
+#### Calculate TE families/subfamilies enrichments:
 
     enrichment.py [-h] [--version] [--background <background>]
                   [--signal <signal>] [--iter <iter>] [--alpha <alpha>]
