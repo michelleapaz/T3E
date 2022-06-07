@@ -1,5 +1,6 @@
 # Transposable Element Enrichment Estimator (T3E) 
 A tool for characterising the epigenetic profile of transposable elements using ChIP-seq data
+![T3E Image](github_figure.jpg)
 ## Requirements
 T3E was developed for UNIX environments, written and tested with the following versions:
 * Software
@@ -110,7 +111,3 @@ Calculate TE families/subfamilies enrichments:
 | --enrichment | log2FC threshold to report enrichment [Example: 1.0] |
 | --outputfolder | output folder path [Example: /results] |
 | --outputprefix | prefix name of your analysis [Example: sample001] |
-
-![T3E files](https://github.com/michelleapaz/T3E/blob/main/github_figure.pdf)
-
-![My Image](github_figure.jpg)
