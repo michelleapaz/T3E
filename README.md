@@ -45,11 +45,11 @@ The **parameter.txt** file contains the following parameters:
 | enrichment | log2FC threshold to report enrichment [Example: 1.0] |
 | filter | filter out regions of extremely high signals (0 for NO and 1 for YES) |
 
-The **control_sample.txt** file contains the ChIP-seq input control and sample names (if more than one ChIP-seq sample, separate them using commas) separated by a tab:
+The **control_sample.txt** file contains the ChIP-seq input control and sample names (if more than one ChIP-seq sample, separate them using commas) separated by tab:
 
 ```control sample_1,sample_2,...sample_n```
 
-Directly, **main.sh** code process your datasets and runs T3E
+Directly, **main.sh** code processes your datasets and runs T3E
 
 ### Run **main.sh** code:
 
