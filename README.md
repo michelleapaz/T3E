@@ -112,3 +112,6 @@ Calculate TE families/subfamilies enrichments:
 | --outputprefix | prefix name of your analysis [Example: sample001] |
 
 ![T3E files](https://github.com/michelleapaz/T3E/blob/main/github_figure.pdf)
+<p align="center">
+  <img src="https://github.com/michelleapaz/T3E/blob/main/github_figure.pdf" width="350" title="hover text">
+</p>
