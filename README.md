@@ -110,3 +110,5 @@ Calculate TE families/subfamilies enrichments:
 | --enrichment | log2FC threshold to report enrichment [Example: 1.0] |
 | --outputfolder | output folder path [Example: /results] |
 | --outputprefix | prefix name of your analysis [Example: sample001] |
+
+![Alt text](/data1/T3E/T3E_versions/T3E_github_v1.0/Github_figure.pdf?raw=true "T3E files")
