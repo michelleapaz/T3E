@@ -17,7 +17,7 @@ T3E was developed for UNIX environments, written and tested with the following v
   * bedmap 2.4.37
   * samtools 1.10
 
-## Instalation
+## Installation
 Clone the T3E repository:
 
     git clone https://github.com/michelleapaz/T3E
