@@ -1,7 +1,7 @@
 ###########################################################################
-# Bash script main.sh (v1.0) to call other scripts
+# Bash script main.sh (v1.1) to call other scripts
 # How to run: nohup bash 'main.sh' > 'log.txt' 2>&1 &
-# Last update: 2022_06_07
+# Last update: 2022_08_25
 # Author: Michelle Almeida da Paz
 ###########################################################################
 
@@ -115,7 +115,6 @@ if [ 2 -gt 1 ]; then
 		PRE_BED="$OUTDIR/$SAMPLENAME/"`basename $SAMPLENAME`"_pre.bed";
 		FILTERED_BED="$OUTDIR/$SAMPLENAME/"`basename $SAMPLENAME`"_filtered.bed";
 		BED="$OUTDIR/$SAMPLENAME/"`basename $SAMPLENAME`".bed";
-		DICT="$OUTDIR/$SAMPLENAME/"`basename $SAMPLENAME`".dict";
 		NR_READS_TO_SUBSAMPLE=20000000;
 
 		# Create an output folder for each sample
@@ -210,11 +209,6 @@ if [ 2 -gt 1 ]; then
 			head -n3 $BED;
 			echo "# Output: $BED";
 		fi
-		# Create DICT file
-		echo "# Creating DICT file..."; 
-		cat $BED | cut -f1,4 > $DICT
-		head -n3 $DICT;
-		echo "# Output: $DICT";
 		# Create path file 
 		echo "Feeding PATH_FILE file..."; 
 		echo -e "$BAMFILE;$ACTUAL_NR_READS;$read_len" >> $PATH_FILE;
@@ -248,6 +242,8 @@ if [ 2 -gt 1 ]; then
 		echo "# Counting for TE families/subfamilies...";
 		perl $CODEDIR/count.pl $read_len $BED $INTERSECT > $COUNTS;
 		head -n3 $COUNTS;
+		
+		rm $INTERSECT;
 
 		if (( $SECONDS > 3600 )) ; then
 			let "hours=SECONDS/3600"
@@ -275,6 +271,7 @@ if [ 2 -gt 1 ]; then
 			echo "Calculating input-based probabilities of... $CONTROL";
 			mkdir $OUTDIR/$CONTROL/probabilities;
 			FOLDER_PROBABILITY_CONTROL="$OUTDIR/$CONTROL/probabilities";
+			echo "python3 -u $CODEDIR/probabilities.py --control $CONTROL_BED --readlen $READ_LEN --species $SPECIES --outputfolder $FOLDER_PROBABILITY_CONTROL";
 			python3 -u $CODEDIR/probabilities.py --control $CONTROL_BED --readlen $READ_LEN --species $SPECIES --outputfolder $FOLDER_PROBABILITY_CONTROL;
 		fi
 		FOLDER_PROBABILITY_CONTROL="$OUTDIR/$CONTROL/probabilities";
@@ -282,20 +279,22 @@ if [ 2 -gt 1 ]; then
 		IFS=',' read -ra SAMPLES_ARRAY <<< "$SAMPLES"
 		for SAMPLE in "${SAMPLES_ARRAY[@]}"; do
 			echo "Running T3E to sample $SAMPLE";
-			SAMPLE_DICT="$OUTDIR/$SAMPLE/"`basename $SAMPLE`".dict";
+			SAMPLE_BED="$OUTDIR/$SAMPLE/"`basename $SAMPLE`".bed";
 			[ -f $REPEATS  ] || error_exit "$LINENO" "Cannot find $REPEATS!";
-			[ -f $SAMPLE_DICT  ] || error_exit "$LINENO" "Cannot find $SAMPLE_DICT!";
+			[ -f $SAMPLE_BED  ] || error_exit "$LINENO" "Cannot find $SAMPLE_BED!";
 			[ -f $CONTROL_BED  ] || error_exit "$LINENO" "Cannot find $CONTROL_BED!";
 			[ -f $CONTROL_COUNTS  ] || error_exit "$LINENO" "Cannot find $CONTROL_COUNTS!";
 			READ_LEN=`grep "$SAMPLE" $PATH_FILE | cut -d ';' -f3`;
 			# Run Simulations T3E and Count for TE families/subfamilies
-			python3 -u $CODEDIR/t3e.py --repeat $REPEATS --sample $SAMPLE_DICT --readlen $READ_LEN --control $CONTROL_BED --controlcounts $CONTROL_COUNTS --probability $FOLDER_PROBABILITY_CONTROL --iter $ITER --species $SPECIES --outputfolder $OUTDIR/$SAMPLE/ --outputprefix $SAMPLE > $WORKDIR/log_$SAMPLE.txt;
+			echo "python3 -u $CODEDIR/t3e.py --repeat $REPEATS --sample $SAMPLE_BED --readlen $READ_LEN --control $CONTROL_BED --controlcounts $CONTROL_COUNTS --probability $FOLDER_PROBABILITY_CONTROL --iter $ITER --species $SPECIES --outputfolder $OUTDIR/$SAMPLE/ --outputprefix $SAMPLE > $WORKDIR/log_$SAMPLE.txt";
+			python3 -u $CODEDIR/t3e.py --repeat $REPEATS --sample $SAMPLE_BED --readlen $READ_LEN --control $CONTROL_BED --controlcounts $CONTROL_COUNTS --probability $FOLDER_PROBABILITY_CONTROL --iter $ITER --species $SPECIES --outputfolder $OUTDIR/$SAMPLE/ --outputprefix $SAMPLE > $WORKDIR/log_$SAMPLE.txt;
 			BACKGROUND="$OUTDIR/$SAMPLE/"`basename $SAMPLE`"_background.txt";
 			[ -f $BACKGROUND  ] || error_exit "$LINENO" "Cannot find $BACKGROUND!";
 			SAMPLE_COUNTS="$OUTDIR/$SAMPLE/"`basename $SAMPLE`"_counts.txt";
 			[ -f $SAMPLE_COUNTS  ] || error_exit "$LINENO" "Cannot find $SAMPLE_COUNTS!";
 			# Calculate enrichment for TE families/subfamilies
 			echo "Enrichment of sample $SAMPLE";
+			echo "python3 -u $CODEDIR/enrichment.py --background $BACKGROUND --signal $SAMPLE_COUNTS --iter $ITER --alpha $ALPHA --enrichment $ENRICHMENT --outputfolder $OUTDIR/$SAMPLE/ --outputprefix $SAMPLE";
 			python3 -u $CODEDIR/enrichment.py --background $BACKGROUND --signal $SAMPLE_COUNTS --iter $ITER --alpha $ALPHA --enrichment $ENRICHMENT --outputfolder $OUTDIR/$SAMPLE/ --outputprefix $SAMPLE;
 		done
 	done

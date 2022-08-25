@@ -1,1 +1,2 @@
 #control	sample1,sample2,...,sample_n
+test_control	test_sample

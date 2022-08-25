@@ -1,6 +1,6 @@
 ###########################################################################
-# Python (v3.8.5) script t3e.py (v1.0) to run T3E algorithm
-# Last update: 2022_06_07
+# Python (v3.8.5) script t3e.py (v1.1) to run T3E algorithm
+# Last update: 2022_08_25
 # Author: Michelle Almeida da Paz
 ###########################################################################
 
@@ -18,7 +18,7 @@ import random
 parser = argparse.ArgumentParser(description='T3E: Transposable Element Enrichment Estimator. Description: A tool for characterising the epigenetic profile of transposable elements using ChIP-seq data')
 parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 parser.add_argument('--repeat', action='store', metavar = 'repeat_file', help='transposable elements annotation [rmsk_hg38.bed (Homo sapiens) or rmsk_mm10.bed (Mus musculus)]')
-parser.add_argument('--sample', action='store', metavar = 'sample_file', help='ChIP-seq sample experiment [.dict format]')
+parser.add_argument('--sample', action='store', metavar = 'sample_file', help='ChIP-seq sample experiment [BED format]')
 parser.add_argument('--readlen', action='store', metavar = 'readlen', help='ChIP-seq input control experiment read length in base pairs [Example --readlen 36]')
 parser.add_argument('--control', action='store', metavar = 'control_file', help='ChIP-seq input control experiment [BED format]')
 parser.add_argument('--controlcounts', action='store', metavar = 'control_counts', help='ChIP-seq input control experiment counts [.txt format]')
@@ -51,7 +51,7 @@ def create_chr_dict(sample):
 		read_list = {}
 		for line in s:
 			line = line.rstrip()
-			(chrom, read) = line.split("\t")
+			(chrom, start, end, read) = line.split("\t")
 			read_list.setdefault(read, []).append(chrom)
 	for key, value in read_list.items():
 		random_chr = random.choice(value)
@@ -387,11 +387,10 @@ for chromosome in chromosomes:
 					group_iter[g_name][iteration] = group_iter[g_name][iteration] + count_in_index[g_code]
 					count_in_index[g_code] = 0
 	for iteration in range(num_iter):
-		with open(backup, "a") as bk, open(background, "a") as backg, open(control_counts, "r") as f:
+		with open(background, "a") as backg, open(control_counts, "r") as f:
 			for line in f:
 				line = line.replace("\n", "")
 				(control_group_name, control_count) = line.split("\t")
-				print(f'{chromosome} iter{iteration + 1} {control_group_name} {group_iter[control_group_name][iteration]}', file=bk)
 				if (chromosome == "chrY"):
 					print(f'iter{iteration + 1}\t{control_group_name}\t{group_iter[control_group_name][iteration]}', file=backg)
 end_time = time.time()
