@@ -1,0 +1,10 @@
+name: t3e-env
+channels:
+- defaults
+dependencies:
+- python=3.8.5
+- python:
+  - argparse=1.1
+  - numpy=1.19.0
+  - random=2
+- pip
