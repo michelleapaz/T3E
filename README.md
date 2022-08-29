@@ -167,13 +167,17 @@ chr1	19971	20405	L3
 4. **`./results/`** - contains the output files (one folder for each control and sample BAM files)
 5. **`./scripts/`** - contains all Python, Perl and R scripts
 
-The **`main.sh`** code uses the information contained in two files (`parameters.txt` and `control_sample.txt`) in `./references` folder, processes the datasets and runs T3E scripts automatically
+The **`main.sh`** code uses the information contained in two files (`parameters.txt` and `control_sample.txt`) in `./references` folder, processes the datasets and runs T3E scripts **automatically**
 
 ### Run **main.sh** code:
 
     nohup bash main.sh > log_file.txt 2>&1 &
 
-It is also possible to run each script separately (but it not necessary!) They consist in three steps:
+This command is all you have to run since you managed to configure everything until now. You can check the status of the run printing the end of the log file with the command: 
+
+    tail log_file.txt
+
+T3E also creates a log file (e.g. `log_test_sample.txt`) which can be checked in the same manner. It is also possible to run each script separately (**but it not necessary! T3E does it for you!**). The scripts consist in three steps:
 
 #### Calculate input-based background probability distribution:
 It estimates the probability of a read starting at an effective genomic position in the ChIP-seq input control experiment
