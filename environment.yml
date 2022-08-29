@@ -1,10 +1,11 @@
 name: t3e-env
 channels:
+- conda-forge
 - defaults
 dependencies:
 - python=3.8.5
+- numpy=1.19.0
+- pip=22.2.2
 - python:
   - argparse=1.1
-  - numpy=1.19.0
   - random=2
-- pip
