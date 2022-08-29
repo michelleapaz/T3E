@@ -65,7 +65,7 @@ If the packages load without any error, they are already installed. Otherwise, i
     install.packages("ggplot2")
     
 ## Installation
-### Clonning T3E repository from GitHub
+### Cloning T3E repository from GitHub
 Before using [Git](https://git-scm.com/), make sure it is available. To verify if Git is installed, run this command:
 
     git
@@ -104,7 +104,8 @@ After running T3E, do not forget to deactivate the t3e-env environment, running 
     conda deactivate
     
 ## Usage
-To run T3E the content of five folders should be considered:
+We provide input files as examples and the repeat annotation files for human and mouse genomes used in our study. These files are available here: https://cloud.tugraz.at/index.php/s/Ec8HfnoasnMzcPS
+<br />To run T3E the content of five folders should be considered:
 1. **`./bam/`** - should contain the alignments (BAM files) for ChIP-seq samples and their corresponding input control. It is important that secondary reads are reported by the used mapper. Two files are provided as example (`test_sample.bam` and `test_control.bam`)
 
 2. **`./references/`** - contains 
@@ -118,7 +119,7 @@ To run T3E the content of five folders should be considered:
  | Arguments  | Explanation |
  | ------------- | ------------- |
  | species | hg38 (_Homo sapiens_) or mm10 (_Mus musculus_) |
- | iterations | number of interations [Example: 100] |
+ | iterations | number of iterations [Example: 100] |
  | alpha | level of significance to report enrichment [Example: 0.05] |
  | enrichment | log2FC threshold to report enrichment [Example: 1.0] |
  | filter | filter out regions of extremely high signals (0 for NO and 1 for YES) |
@@ -234,7 +235,7 @@ It is the core script of T3E and it computes the background distribution of read
 | --control | ChIP-seq input control experiment [BED format] |
 | --controlcounts | ChIP-seq input control experiment counts [.txt format] |
 | --probability | probability folder path [Example: /control/probability/] |
-| --iter | number of interations [Example: 100] |
+| --iter | number of iterations [Example: 100] |
 | --species | hg38 (_Homo sapiens_) or mm10 (_Mus musculus_) [Example --species hg38] |
 | --outputfolder | output folder path [Example: /results] |
 | --outputprefix | prefix name of your analysis [Example: test_sample] |
@@ -279,7 +280,7 @@ It computes ChIP-seq enrichment at TE families/subfamilies relative to a backgro
 | --version | shows version message and exits |
 | --background | background file created by T3E [Example: sample001_background.txt] |
 | --signal | ChIP-seq sample experiment counts [.txt format] |
-| --iter | number of interations [Example: 100] |
+| --iter | number of iterations [Example: 100] |
 | --alpha | level of significance to report enrichment [Example: 0.05] |
 | --enrichment | log2FC threshold to report enrichment [Example: 1.0] |
 | --outputfolder | output folder path [Example: /results] |
