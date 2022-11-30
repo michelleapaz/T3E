@@ -1,8 +1,8 @@
 # Transposable Element Enrichment Estimator (T3E) 
 ## A tool for characterising the epigenetic profile of transposable elements using ChIP-seq data
 ![T3E Image](/figures/github_figure.jpg)
-### Read about T3E in the latest preprint:
-Michelle Almeida da Paz, Leila Taher. T3E: a tool for characterising the epigenetic profile of transposable elements using ChIP-seq data, 13 June 2022, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-1723759/v1]
+### Read about T3E in:
+Almeida da Paz, M., Taher, L. T3E: a tool for characterising the epigenetic profile of transposable elements using ChIP-seq data. Mobile DNA 13, 29 (2022). https://doi.org/10.1186/s13100-022-00285-z
 
 ## Software requirements
 T3E was developed for UNIX environments, written and tested with the following versions:
