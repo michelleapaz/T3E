@@ -134,7 +134,9 @@ We provide input files as examples and the repeat annotation files for human and
  filter	0
  ```
  
- Like that, T3E considers the repeat annotation for _Homo sapiens_ (hg38), simulates 100 input libraries for each ChIP-seq sample, considers level of significance of 0.05 and log2FC of 1.0 for reporting enrichments, and it does not filter out regions of extremely high signals 
+ Like that, T3E considers the repeat annotation for _Homo sapiens_ (hg38), simulates 100 input libraries for each ChIP-seq sample, considers level of significance of 0.05 and log2FC of 1.0 for reporting enrichments, and it does not filter out regions of extremely high signals
+ 
+ **It is recommended to filter out regions of extremely high signals for the mouse genome!**
 
  * chromosome size files [**`hg38.genome`** (_Homo sapiens_) and **`mm10.genome`** (_Mus musculus_)]
  <br />Content of `hg38.genome` file (first 5 lines):
