@@ -1,7 +1,7 @@
 ###########################################################################
 # Bash script main.sh (v1.1) to call other scripts
 # How to run: nohup bash 'main.sh' > 'log.txt' 2>&1 &
-# Last update: 2022_08_25
+# Last update: 2023_02_03
 # Author: Michelle Almeida da Paz
 ###########################################################################
 
