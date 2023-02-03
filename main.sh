@@ -177,10 +177,7 @@ if [ 2 -gt 1 ]; then
 			# Sort high signal region bed file
 			echo "Sort high signal region bed file...";
 			sort-bed --max-mem 16G $PATH_IN_R/${SAMPLENAME}_high_signal_region_${WINDOWS}_${STEPS}.bed > $PATH_IN_R/${SAMPLENAME}_high_signal_region_${WINDOWS}_${STEPS}_sorted.bed
-			input1="$REPEATS";
-			input2="${input1##*/}";
-			input3="${input2%.txt}";
-			ANNOTATION="$WORKDIR/repeats/"`basename $input3`"_filtered_grouped.bed";
+			ANNOTATION="$REPEATS";
 			# Annotate the high signal regions in regards of repeat sequences
 			echo "Annotate the high signal regions in regards of repeat sequences...";
 			bedmap --echo --echo-map --echo-overlap-size $ANNOTATION $PATH_IN_R/${SAMPLENAME}_high_signal_region_${WINDOWS}_${STEPS}_sorted.bed > $PATH_IN_R/${SAMPLENAME}_high_signal_region_${WINDOWS}_${STEPS}_annotation.bed
