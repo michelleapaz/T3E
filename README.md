@@ -104,7 +104,7 @@ After running T3E, do not forget to deactivate the t3e-env environment, running 
     conda deactivate
     
 ## Usage
-We provide input files as examples and the repeat annotation files for human and mouse genomes used in our study. These files are available here: https://cloud.tugraz.at/index.php/s/Ec8HfnoasnMzcPS
+Input files and repeat annotation files for human and mouse genomes used in our study should be provided.
 <br />To run T3E the content of five folders should be considered:
 1. **`./bam/`** - should contain the alignments (BAM files) for ChIP-seq samples and their corresponding input control. It is important that secondary reads are reported by the used mapper. Two files are provided as example (`test_sample.bam` and `test_control.bam`)
 
